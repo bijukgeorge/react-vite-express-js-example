@@ -1,50 +1,20 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import viteLogo from '/vite.svg';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from '@/components/Layout';
+import Home from '@/pages/Home';
+import About from '@/pages/About';
+import NotFound from '@/pages/NotFound';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center p-8">
-      <div className="flex gap-8 mb-8">
-        <a
-          href="https://vite.dev"
-          target="_blank"
-          className="hover:scale-110 transition-transform"
-        >
-          <img src={viteLogo} className="h-24 w-24" alt="Vite logo" />
-        </a>
-        <a
-          href="https://react.dev"
-          target="_blank"
-          className="hover:scale-110 transition-transform"
-        >
-          <img
-            src={reactLogo}
-            className="h-24 w-24 animate-spin"
-            alt="React logo"
-          />
-        </a>
-      </div>
-      <h1 className="font-bold mb-8 text-center">Vite + React + Tailwind</h1>
-      <div className="text-center">
-        <button
-          onClick={() => setCount(count => count + 1)}
-          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors mb-4"
-        >
-          count is {count}
-        </button>
-        <p className="text-gray-300 mb-4">
-          Edit{' '}
-          <code className="bg-gray-800 px-2 py-1 rounded">src/App.tsx</code> and
-          save to test HMR
-        </p>
-      </div>
-      <p className="text-gray-400 text-center mt-8">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
