@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { Button, ButtonVariants } from '@/atoms/Button';
+import type { AppRoutes } from '@/AppRoutes.ts';
 
 interface NavigationItemProps {
-  path: string;
+  path: AppRoutes;
   name: string;
   isActive: boolean;
 }

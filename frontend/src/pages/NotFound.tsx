@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AppRoutes } from '@/AppRoutes.ts';
 
 function NotFound() {
   return (
@@ -11,7 +12,7 @@ function NotFound() {
           deleted, or you entered the wrong URL.
         </p>
         <Link
-          to="/"
+          to={AppRoutes.Home}
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
         >
           Go Home

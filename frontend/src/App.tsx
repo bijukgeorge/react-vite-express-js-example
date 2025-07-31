@@ -1,17 +1,18 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import Home from '@/pages/Home';
 import About from '@/pages/About';
 import NotFound from '@/pages/NotFound';
+import { AppRoutes } from '@/AppRoutes.ts';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
+        <Route element={<Layout />}>
+          <Route path={AppRoutes.Home} element={<Home />} />
+          <Route path={AppRoutes.About} element={<About />} />
+          <Route path={AppRoutes.NotFound} element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { NavigationItem } from '@/components/Navigation/NavigationItem.tsx';
+import { AppRoutes } from '@/AppRoutes.ts';
 
 export function Navigation() {
   const location = useLocation();
@@ -14,21 +15,21 @@ export function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
             <Link
-              to="/"
+              to={AppRoutes.Home}
               className="text-white font-bold text-xl hover:text-blue-400 transition-colors"
             >
               React App
             </Link>
             <div className="flex space-x-4">
               <NavigationItem
-                path={'/'}
+                path={AppRoutes.Home}
                 name="Home"
-                isActive={isActive('/')}
+                isActive={isActive(AppRoutes.Home)}
               ></NavigationItem>
               <NavigationItem
-                path={'/about'}
+                path={AppRoutes.About}
                 name="About"
-                isActive={isActive('/about')}
+                isActive={isActive(AppRoutes.About)}
               ></NavigationItem>
             </div>
           </div>
