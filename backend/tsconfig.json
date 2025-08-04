@@ -14,7 +14,13 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
-    "removeComments": false
+    "removeComments": false,
+
+    /* Path Mapping */
+    "baseUrl": ".",
+    "paths": {
+        "@/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
