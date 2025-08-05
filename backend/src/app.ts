@@ -1,6 +1,7 @@
 import express, { Express } from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 import '@/container.js';
 import { container } from '@/container.js';
@@ -31,6 +32,16 @@ process.on('SIGINT', async () => shutDown('SIGINT'));
 process.on('SIGTERM', async () => await shutDown('SIGTERM'));
 
 // App Setup
+
+// Enable CORS for all routes
+app.use(
+  cors({
+    origin: 'http://localhost:5173', // Frontend URL
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
 app.use(loggingMiddleware);
 app.use(express.json());
