@@ -1,5 +1,8 @@
 {
   "extends": "../tsconfig.base.json",
+  "references": [
+    { "path": "../shared" }
+  ],
   "compilerOptions": {
     /* Output Configuration */
     "outDir": "./dist",
@@ -23,7 +26,8 @@
     /* Path Mapping */
     "baseUrl": "./src",
     "paths": {
-        "@/*": ["./*"]
+        "@/*": ["./*"],
+        "@app/shared": ["../shared/src/index.ts"]
     }
   },
   "include": ["src"],
