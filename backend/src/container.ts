@@ -6,6 +6,13 @@ import {
   DatabaseConnectionManager,
 } from '@/utilities/database/index.js';
 import { ILogger, Logger } from '@/utilities/logger/index.js';
+import { ProductController } from '@/controllers/ProductController.js';
+
+// Controllers
+container.registerSingleton<ProductController>(
+  'ProductController',
+  ProductController
+);
 
 // Services
 container.registerSingleton<IProductService>('IProductService', ProductService);
