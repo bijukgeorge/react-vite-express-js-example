@@ -10,9 +10,8 @@ export class ProductService implements IProductService {
   constructor(
     @inject('ILoggerService') private logger: ILogger,
     @inject('IDatabaseConnectionManager')
-    private dbManager: IDatabaseConnectionManager,
-  ) {
-  }
+    private dbManager: IDatabaseConnectionManager
+  ) {}
 
   async getProducts(): Promise<Product[]> {
     this.logger.debug('Fetching all products from database');
@@ -54,7 +53,7 @@ export class ProductService implements IProductService {
       });
 
       this.logger.debug(
-        `Successfully created product with id: ${newProduct.id}`,
+        `Successfully created product with id: ${newProduct.id}`
       );
 
       return newProduct;
@@ -66,7 +65,7 @@ export class ProductService implements IProductService {
 
   async updateProduct(
     id: string,
-    productData: UpdateProductBody,
+    productData: UpdateProductBody
   ): Promise<Product | null> {
     this.logger.debug(`Updating product with id: ${id}`, productData);
     try {
