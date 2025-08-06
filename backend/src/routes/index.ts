@@ -1,10 +1,13 @@
-import express, { Router, Request, Response, NextFunction } from 'express';
+import express, { Router } from 'express';
+import { container } from 'tsyringe';
+import { HomeController } from '@/controllers/HomeController.js';
 
 const router: Router = express.Router();
 
-/* GET home page. */
-router.get('/', function (_req: Request, res: Response, _next: NextFunction) {
-  res.render('index', { title: 'Express' });
-});
+// Get the controller instance from the DI container
+const homeController = container.resolve<HomeController>('HomeController');
+
+/* GET health check. */
+router.get('/health', (req, res) => homeController.getHealth(req, res));
 
 export default router;

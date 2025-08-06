@@ -6,9 +6,11 @@ import {
   DatabaseConnectionManager,
 } from '@/utilities/database/index.js';
 import { ILogger, Logger } from '@/utilities/logger/index.js';
+import { HomeController } from '@/controllers/HomeController.js';
 import { ProductController } from '@/controllers/ProductController.js';
 
 // Controllers
+container.registerSingleton<HomeController>('HomeController', HomeController);
 container.registerSingleton<ProductController>(
   'ProductController',
   ProductController
