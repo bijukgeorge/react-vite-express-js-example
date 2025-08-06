@@ -32,7 +32,7 @@ export function Button({
             variant === ButtonVariants.Primary,
           'border-2 border-blue-600 bg-transparent text-blue-600 shadow-sm hover:bg-blue-600 hover:text-white hover:shadow-md disabled:border-blue-300 disabled:text-blue-300 disabled:bg-transparent':
             variant === ButtonVariants.Outline,
-          'border-2 border-transparent text-gray-300 hover:text-white hover:bg-gray-700':
+          'border-2 border-transparent text-gray-500 hover:text-white hover:bg-gray-700':
             variant === ButtonVariants.Secondary,
           'bg-red-600 text-white shadow-sm hover:bg-red-700 hover:shadow-md disabled:bg-red-300 disabled:text-red-100':
             variant === ButtonVariants.Destructive,
