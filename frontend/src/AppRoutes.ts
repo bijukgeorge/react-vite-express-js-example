@@ -3,5 +3,6 @@ export const enum AppRoutes {
   About = '/about',
   Products = '/products',
   ProductAdd = '/products/add',
+  ProductEdit = '/products/:id',
   NotFound = '*',
 }

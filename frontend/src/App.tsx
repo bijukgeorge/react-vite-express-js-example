@@ -4,6 +4,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import ProductListPage from '@/pages/ProductListPage';
 import ProductAddPage from '@/pages/ProductAddPage';
+import ProductEditPage from '@/pages/ProductEditPage';
 import NotFound from '@/pages/NotFound';
 import { AppRoutes } from '@/AppRoutes.ts';
 
@@ -16,6 +17,7 @@ function App() {
           <Route path={AppRoutes.About} element={<About />} />
           <Route path={AppRoutes.Products} element={<ProductListPage />} />
           <Route path={AppRoutes.ProductAdd} element={<ProductAddPage />} />
+          <Route path={AppRoutes.ProductEdit} element={<ProductEditPage />} />
           <Route path={AppRoutes.NotFound} element={<NotFound />} />
         </Route>
       </Routes>
