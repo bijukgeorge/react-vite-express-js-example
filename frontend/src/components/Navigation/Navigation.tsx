@@ -31,6 +31,11 @@ export function Navigation() {
                 name="About"
                 isActive={isActive(AppRoutes.About)}
               ></NavigationItem>
+              <NavigationItem
+                path={AppRoutes.Products}
+                name="Products"
+                isActive={isActive(AppRoutes.Products)}
+              ></NavigationItem>
             </div>
           </div>
         </div>
